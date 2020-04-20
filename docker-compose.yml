@@ -1,0 +1,9 @@
+version: "3.4"
+services:
+  file-watcher:
+    build: "."
+    image: file-watcher:latest
+    environment:
+      WATCH_FILES_GLOB: ./*.yml
+    volumes:
+      - ./:/watch
