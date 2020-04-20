@@ -13,5 +13,6 @@ chokidar
   })
   .on("all", (event, path) => {
     console.log(`\u001b[32m${event} ${path}\u001b[39m`);
-    console.log(fs.readFileSync(path, "utf8"));
+    if (event == "add" || event == "change")
+      console.log(fs.readFileSync(path, "utf8"));
   });
