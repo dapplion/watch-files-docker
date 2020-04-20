@@ -4,6 +4,6 @@ services:
     build: "."
     image: file-watcher:latest
     environment:
-      WATCH_FILES_GLOB: ./*.yml
+      WATCH_FILES_GLOB: "*.yml"
     volumes:
-      - ./:/watch
+      - $PWD:/watch
